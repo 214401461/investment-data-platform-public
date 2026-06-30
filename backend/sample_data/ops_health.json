@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-06-30T09:00:00+08:00",
+  "overall_status": "ok",
+  "pages": [
+    {"page": "market_overview", "status": "ok", "business_date": "2026-06-30"},
+    {"page": "macro_cycle", "status": "ok", "business_date": "2026-06-30"},
+    {"page": "alpha_lab", "status": "research-demo", "business_date": "2026-06-30"}
+  ],
+  "jobs": [
+    {"name": "sample_market_job", "status": "success"},
+    {"name": "sample_macro_job", "status": "success"},
+    {"name": "sample_alpha_job", "status": "success"}
+  ]
+}
+

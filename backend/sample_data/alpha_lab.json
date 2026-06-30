@@ -1,0 +1,20 @@
+{
+  "business_date": "2026-06-30",
+  "status": "research-demo",
+  "strategy": {
+    "name": "Sample Multi-Factor Strategy",
+    "return_20d": "2.8%",
+    "max_drawdown_60d": "-3.4%",
+    "turnover_20d": "18.5%"
+  },
+  "factors": [
+    {"name": "quality", "ic_20d": 0.041, "status": "sample"},
+    {"name": "momentum", "ic_20d": 0.026, "status": "sample"},
+    {"name": "low_vol", "ic_20d": 0.018, "status": "sample"}
+  ],
+  "notes": [
+    "公开版只展示结构和口径，不包含真实策略参数。",
+    "所有数字均为示例数据。"
+  ]
+}
+

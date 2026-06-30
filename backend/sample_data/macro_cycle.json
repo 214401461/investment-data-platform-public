@@ -1,0 +1,16 @@
+{
+  "business_date": "2026-06-30",
+  "current_quadrant": "复苏",
+  "growth_z": 0.38,
+  "inflation_z": -0.12,
+  "signals": [
+    {"name": "信用周期", "value": "边际改善"},
+    {"name": "库存周期", "value": "主动补库早期"},
+    {"name": "利率环境", "value": "中性偏宽"}
+  ],
+  "trajectory": [
+    {"period": "2026Q1", "growth_z": 0.08, "inflation_z": -0.21},
+    {"period": "2026Q2", "growth_z": 0.38, "inflation_z": -0.12}
+  ]
+}
+

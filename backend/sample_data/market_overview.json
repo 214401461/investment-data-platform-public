@@ -1,0 +1,16 @@
+{
+  "business_date": "2026-06-30",
+  "market_state": "震荡偏强",
+  "indices": [
+    {"name": "沪深300", "change_pct": 0.42, "valuation_percentile": 41},
+    {"name": "中证500", "change_pct": 0.71, "valuation_percentile": 36},
+    {"name": "创业板指", "change_pct": -0.18, "valuation_percentile": 48}
+  ],
+  "capital_flow": {"northbound": "sample-only", "main_net_inflow": 12.4},
+  "hot_industries": [
+    {"name": "电子", "heat": 86},
+    {"name": "电力设备", "heat": 72},
+    {"name": "医药生物", "heat": 65}
+  ]
+}
+
