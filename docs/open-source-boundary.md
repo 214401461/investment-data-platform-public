@@ -22,12 +22,18 @@ This repository is designed to be safe for public use.
 
 ## Release Check
 
-Run these commands before publishing a release:
+GitHub Actions runs the full audit suite on pull requests and pushes to `main`. Run the same command locally before publishing a release:
 
 ```bash
-python scripts/secret_scan.py .
+python scripts/audit_all.py
 git status --short
 git ls-files
 ```
 
-Stop the release if the secret scan reports any high-risk finding.
+When validating from a local machine that also has the real Qiuqiu frontend source tree next to this repository, use the stricter acceptance command:
+
+```bash
+python scripts/audit_all.py --require-real-parity
+```
+
+Stop the release if repository hygiene, runtime boundary, parity, tests, or the secret scan reports a failure.

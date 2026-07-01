@@ -11,10 +11,14 @@ from pydantic import BaseModel
 
 
 DEFAULT_DATA_DIR = Path(__file__).resolve().parents[1] / "sample_data"
+SAMPLE_DATA_ROOT = DEFAULT_DATA_DIR.resolve()
 
 
 def data_dir() -> Path:
-    return Path(os.getenv("DEMO_DATA_DIR", DEFAULT_DATA_DIR)).resolve()
+    candidate = Path(os.getenv("DEMO_DATA_DIR", DEFAULT_DATA_DIR)).resolve()
+    if candidate != SAMPLE_DATA_ROOT and SAMPLE_DATA_ROOT not in candidate.parents:
+        raise HTTPException(status_code=403, detail="DEMO_DATA_DIR must stay inside backend/sample_data")
+    return candidate
 
 
 def load_json(name: str) -> dict[str, Any]:
@@ -26,6 +30,12 @@ def load_json(name: str) -> dict[str, Any]:
 
 class AiQuestion(BaseModel):
     question: str
+
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+    remember: bool = True
 
 
 app = FastAPI(
@@ -51,6 +61,24 @@ app.add_middleware(
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok", "mode": "public-demo"}
+
+
+@app.post("/auth/login")
+def login(payload: LoginRequest) -> dict[str, Any]:
+    if payload.username != "hello" or payload.password != "hello":
+        raise HTTPException(status_code=401, detail="invalid demo credentials")
+
+    return {
+        "token": "public-demo-token",
+        "user": {
+            "id": "public-demo-admin",
+            "username": "hello",
+            "displayName": "Public Demo Admin",
+            "role": "admin",
+            "mustChangePassword": False,
+        },
+        "remember": payload.remember,
+    }
 
 
 @app.get("/api/biz/market/overview")

@@ -3,53 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Investment Data Platform Lite</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>球球投研 · Public Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">Public Demo</p>
-        <h1>Investment Data Platform Lite</h1>
-      </div>
-      <span class="status" id="health">Checking API</span>
-    </header>
-
-    <main class="layout">
-      <section class="panel span-2">
-        <h2>Market Overview</h2>
-        <div id="market" class="grid"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Macro Cycle</h2>
-        <div id="macro"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Alpha Lab</h2>
-        <div id="alpha"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Ops Health</h2>
-        <div id="ops"></div>
-      </section>
-
-      <section class="panel span-2">
-        <h2>AI Demo</h2>
-        <form id="ai-form" class="askbar">
-          <input id="question" value="今天市场怎么样？" aria-label="Question" />
-          <button type="submit">Ask</button>
-        </form>
-        <pre id="answer"></pre>
-      </section>
-    </main>
-
-    <footer>
-      示例数据仅用于工程演示，不构成投资建议。
-    </footer>
-    <script src="./app.js"></script>
+    <div id="app"></div>
+    <script src="/app.js"></script>
   </body>
 </html>
-
